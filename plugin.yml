@@ -1,0 +1,108 @@
+name: BVRename
+main: play.bvrename.com.SimpleRename
+version: 10.0
+authors: [BlazeVortex]
+description: Simple plugin to rename and relore items
+softdepend: [Vault]
+commands:
+  rename:
+    description: Name command for items
+    usage: /<command>  
+    aliases: [setname]
+  relore:
+    description: Lore command for items
+    usage: /<command> 
+    aliases: [setlore]
+  addlore:
+    description: Add multiple lore lines
+    usage: /<command> 
+  removelore:
+    description: Remove lore lines
+    usage: /<command> <line>
+  sr:
+    description: SimpleRename main command
+    usage: /<command>    
+    aliases: [simplerename]
+permissions:
+  sr.use:
+        description: Gives access to all use commands
+        children:
+            sr.name: true
+            sr.lore: true
+            sr.duplicate: true
+            sr.copy: true
+            sr.clear: true
+            sr.book: true
+            sr.glow: true
+            sr.hide: true
+            sr.removeLore: true
+  sr.user:
+        description: Gives access to all user commands
+        children:
+            sr.name: true
+            sr.lore: true
+            sr.removeLore: true
+            sr.book: true
+  sr.*:
+        description: Gives access to all commands
+        children:
+            sr.name: true
+            sr.lore: true
+            sr.duplicate: true
+            sr.copy: true
+            sr.color: true
+            sr.update: true
+            sr.free: true
+            sr.blacklist: true
+            sr.book: true
+            sr.clear: true
+            sr.skull: true
+            sr.mob: true
+            sr.glow: true
+            sr.hide: true
+            sr.removeLore: true
+  sr.name:
+    description: Perm to use /rename /setname
+    default: op
+  sr.lore:
+    description: Perm to use /relore /setlore /addlore
+    default: op
+  sr.color:
+    description: Perm to use color codes
+    default: op
+  sr.free:
+    description: Perm to use the commands for free
+    default: false
+  sr.update:
+    description: Perm to use the /sr update
+    default: op
+  sr.duplicate:
+    description: Perm to use the /sr duplicate
+    default: op
+  sr.copy:
+    description: Perm to use the /sr copy & /sr paste
+    default: op
+  sr.blacklist:
+    description: Perm to ignore blaclisted block
+    default: false
+  sr.book:
+    description: Perm to use all /sr book commands
+    default: op
+  sr.clear:
+    description: Perm to use /sr clear command
+    default: op
+  sr.mob:
+    description: Perm to use /sr mob command
+    default: op
+  sr.skull:
+    description: Perm to use /sr skull command
+    default: op
+  sr.glow:
+    description: Perm to use /sr glow command
+    default: op
+  sr.hide:
+    description: Perm to use /sr hideflags command
+    default: op
+sr.removeLore:
+    description: Perm to use /sr removelore command
+    default: op
